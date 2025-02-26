@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Emotion Detection</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f1f1f1;
+    }
+
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    .navbar a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px;
+      text-align: center;
+      background-color: #fff;
+      margin-top: 100px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .input-container {
+      margin-bottom: 20px;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+
+    .file-input-label {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .file-input-label:hover {
+      background-color: #45a049;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="/">Home</a>
+    <a href="/audio">Audio</a>
+    <a href="/video">Video</a>
+    <a href="/contact">Contact</a>
+  </div>
+
+  <div class="container">
+    <h1>Emotion Detection</h1>
+    <div class="input-container">
+      <label for="audio" class="file-input-label">Choose Audio File</label>
+      <input type="file" id="audio" accept="audio/*">
+    </div>
+    <button id="analyzeButton">Analyze Emotion</button>
+  </div>
+
+  <script>
+    // Get the audio input element
+    const audioInput = document.getElementById('audio');
+
+    // Event listener for the audio input element
+    audioInput.addEventListener('change', function(event) {
+      const file = event.target.files[0];
+      // Use the file for further processing or uploading to the ML model
+      console.log('Audio file:', file);
+    });
+
+    // Event listener for the analyze button
+    const analyzeButton = document.getElementById('analyzeButton');
+    analyzeButton.addEventListener('click', function() {
+      // Process the audio input and pass it to the ML model
+      console.log('Analyzing emotion...');
+    });
+  </script>
+</body>
+</html>
